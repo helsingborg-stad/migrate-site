@@ -66,12 +66,12 @@ get_enviroment_vars () {
 # ------------------------------------------------------------------------------
 
 if [ ! -e ${VHOST_PROD_PATH} ]; then
-    echo "Hallooooo! No vhost for docroot found, exit..."
+    echo "Hallooooo! No vhost for your production enviroment found, exit..."
     exit 1
 fi
 
 if [ ! -e ${VHOST_BETA_PATH} ]; then
-    echo "Where is beta? No vhost for docroot_beta found, exit..."
+    echo "Where is beta? No vhost for your beta enviroment found, exit..."
     exit 1
 fi
 
