@@ -37,7 +37,8 @@ VHOST_BETA_PATH=/path/to/your/apache2/conf.d/beta_vhost
 
 # ------------------------------------------------------------------------------
 # Function to export the enviroment variables from vhost files
-# @param docroot
+# @param DOCROOT_PROD
+# @param DOCROOT_BETA
 # @return void
 # ------------------------------------------------------------------------------
 
