@@ -21,7 +21,7 @@ DOCROOT_BETA=/path/to/your/beta/site/dir/
 REPLACE_PROD_URL=domain.se
 
 # Beta domain
-REPLACE_PROD_ULR_BETA=beta.domain
+REPLACE_BETA_URL=beta.domain
 
 # Path to production vhost file
 VHOST_PROD_PATH=/path/to/your/apache2/conf.d/production_vhost
@@ -37,8 +37,7 @@ VHOST_BETA_PATH=/path/to/your/apache2/conf.d/beta_vhost
 
 # ------------------------------------------------------------------------------
 # Function to export the enviroment variables from vhost files
-# @param DOCROOT_PROD
-# @param DOCROOT_BETA
+# @param VHOST_PATH
 # @return void
 # ------------------------------------------------------------------------------
 
@@ -67,12 +66,12 @@ get_enviroment_vars () {
 # ------------------------------------------------------------------------------
 
 if [ ! -e ${VHOST_PROD_PATH} ]; then
-    echo "Hallooooo! No vhost for your production enviroment found, exit..."
+    echo "Hallooooo! No vhost for docroot found, exit..."
     exit 1
 fi
 
 if [ ! -e ${VHOST_BETA_PATH} ]; then
-    echo "Where is beta? No vhost for your beta enviroment found, exit..."
+    echo "Where is beta? No vhost for docroot_beta found, exit..."
     exit 1
 fi
 
@@ -119,12 +118,18 @@ echo "Great! Databases are in sync"
 # WP CLI Search and replace domains
 # ------------------------------------------------------------------------------
 
-CD_ROOT_PATH=${ROOT_PATH_BETA}
-
+CD_ROOT_PATH=${DOCROOT_BETA}"/"
 cd $CD_ROOT_PATH
-wp search-replace '${REPLACE_PROD_URL}' '${REPLACE_PROD_URL_BETA}' --allow-root  --skip-columns=guid
 
-echo "WP CLI replaced url's in beta database";
+
+if (wp --url=http://"${REPLACE_BETA_URL}" core is-installed --network --allow-root --path=`${DOCROOT_BETA}/`); then
+    wp search-replace --url=http://${REPLACE_PROD_URL} ${REPLACE_PROD_URL} ${REPLACE_BETA_URL} --path=`${DOCROOT_BETA}/` --recurse-objects --network --skip-columns=guid --skip-tables=wp_users --allow-root
+    echo "WP CLI replaced url's in beta database (Multisite)";
+else
+    wp search-replace ${REPLACE_PROD_URL} ${REPLACE_BETA_URL} --path=`${DOCROOT_BETA}/` --recurse-objects --skip-columns=guid --skip-tables=wp_users --allow-root
+    echo "WP CLI replaced url's in beta database";
+fi
+wp cache flush --allow-root
 
 
 # ------------------------------------------------------------------------------
@@ -132,7 +137,7 @@ echo "WP CLI replaced url's in beta database";
 # ------------------------------------------------------------------------------
 
 PROD_CONTENT_DIR="${DOCROOT_PROD}/wp-content/uploads"
-BETA_CONTENT_DIR="${DOCROOT_PROD}/wp-content/uploads"
+BETA_CONTENT_DIR="${DOCROOT_BETA}/wp-content/uploads"
 
 if [ -d ${PROD_CONTENT_DIR} ]; then
     echo "Copying content from ${PROD_CONTENT_DIR}..."
@@ -142,4 +147,3 @@ else
 fi
 
 echo "Woop woop! Beta is up to date"
-
