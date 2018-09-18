@@ -126,7 +126,7 @@ if (wp --url=http://"${REPLACE_BETA_URL}" core is-installed --network --allow-ro
     wp search-replace --url=http://${REPLACE_PROD_URL} ${REPLACE_PROD_URL} ${REPLACE_BETA_URL} --path=`${DOCROOT_BETA}/` --recurse-objects --network --skip-columns=guid --skip-tables=wp_users --allow-root
     echo "WP CLI replaced url's in beta database (Multisite)";
 else
-    wp search-replace ${REPLACE_PROD_URL} ${REPLACE_BETA_URL} --path=`${DOCROOT_BETA}/` --recurse-objects --skip-columns=guid --skip-tables=wp_users --allow-root
+    wp search-replace --url=http://${REPLACE_PROD_URL} ${REPLACE_PROD_URL} ${REPLACE_BETA_URL} --path=`${DOCROOT_BETA}/` --recurse-objects --skip-columns=guid --skip-tables=wp_users --allow-root
     echo "WP CLI replaced url's in beta database";
 fi
 wp cache flush --allow-root
