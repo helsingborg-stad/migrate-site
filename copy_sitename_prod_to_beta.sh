@@ -109,8 +109,8 @@ fi
 echo "Goodie! Now we Copy ${PROD_DATABASE_NAME} tables to ${BETA_DATABASE_NAME}..."
 
 if ("${PROD_DATABASE_NAME}" == "${BETA_DATABASE_NAME}"); then
-    echo Production: "${PROD_DATABASE_NAME}"
-    echo Beta: "${BETA_DATABASE_NAME}"
+    echo "Production: ${PROD_DATABASE_NAME}"
+    echo "Beta: ${BETA_DATABASE_NAME}"
     echo "Production database is same as Beta database, Check your vhost file, if enviroment variables has trailing whitespace."
     echo "There is a risk of deleting your production database, if this script continue. Exit procedure.... "
     exit 1
