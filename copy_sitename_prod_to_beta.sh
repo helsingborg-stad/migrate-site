@@ -153,4 +153,4 @@ else
     echo "Hey, mr, mrs, miss.... Directory '${PROD_CONTENT_DIR}' not found, ignore..."
 fi
 
-echo "Woop woop! Beta is up to date"
+echo "Woop woop! $ENVIRONMENT Beta is synced and up to date"
