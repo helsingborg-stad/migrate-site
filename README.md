@@ -14,7 +14,7 @@ The following things happen when you run the script.
 4. Creates a log file
 
 ## Dependencies
-Linux/Unix Bash, WP CLI, MySQL
+Linux/Unix Bash, WP CLI, Wordpress site, MySQL
 
 ## Things you need to do
 1. Edit config.sh and set the path to your vhost directory and www directory
