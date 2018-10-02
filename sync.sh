@@ -27,10 +27,11 @@ source $SYNCREPLACE/fetch_enviroment_vars.sh
 find $LOGDIR/sync.log -mtime +30 -type f -delete
 
 # -----------------------------------------------------------------------------------------
-# Check if file not exist - Create new log file
+# Check if file and directory exist - Create new dir and log file
 # -----------------------------------------------------------------------------------------
 
 logfile=$LOGDIR/sync.log
+mkdir -p $logfile
 
 if [ ! -f $logfile ]
 then
