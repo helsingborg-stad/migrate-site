@@ -20,12 +20,19 @@ Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
 1. Add following Enviroment variables to the vhost file:
 
   SetEnv ENVIRONMENT docroot_your_name
+  
   SetEnv SYNC true
+
   SetEnv SYNCID website Id (example: mysite)
+  
   SetEnv SYNCDIR website-directory-name
+  
   SetEnv DATABASE_NAME database-name
+  
   SetEnv DATABASE_HOST localhost
+  
   SetEnv DATABASE_USERNAME username
+  
   SetEnv DATABASE_PASSWORD password
 
 2. Create a file name config.sh, use the config-example.sh as a template and set the path to your vhost directory and www directory
