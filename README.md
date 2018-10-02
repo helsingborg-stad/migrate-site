@@ -21,8 +21,8 @@ Linux/Unix Bash, WP CLI, Wordpress site, MySQL
 2. Edit or add one or more site files in /sites directory. Edit directory names and domains.
 
 ## Run script manualy
-1. cd to directory
-2. write bash sync.sh to execute the script
+1. cd to migrate-site directory
+2. Type: bash sync.sh to execute the script
 
 ## Run script once a week in cron
-0 14 * * 1   root   bash /path_to_this_app/sync.sh > /dev/null
+0 14 * * 1  yourusername  bash /path_to_this_app/sync.sh > /dev/null
