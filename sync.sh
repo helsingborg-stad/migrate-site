@@ -67,7 +67,7 @@ do
                 printf "\033[1;31m  Sync: Lets do some syncmagic on ${SYNCID} \033[0m\n"
                 printf "\033[0;31m---------------------------------------------------------------- \033[0m\n"
 
-                source $SCRIPTDIR/sync_$SYNCID.sh
+                source $SCRIPTDIR/$SYNCID.sh
 
                 export DOCROOT_PROD=$SITEDIR/$PRODWWW
                 export DOCROOT_BETA=$SITEDIR/$BETAWWW
