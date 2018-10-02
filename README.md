@@ -2,8 +2,6 @@
 Shell script to migrate one ore more websites
 
 With this bash scripts you can sync one or more Beta wordpress installations with your Production environment.
-You need to set a few things before you can run the script.
-
 
 ## What?
 The following things happen when you run the script.
@@ -11,12 +9,12 @@ The following things happen when you run the script.
 1. Backing up the production database and beta database
 2. Exports the production database and replace the beta database data with production data
 3. Using WP CLI to replace static url's so they match beta enviroment
-4. Creates a log file
-
-## Dependencies
-Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
+4. Syncing upload directories.
+5. Creates a log file
 
 ## Install - Things you need to do
+You need to set a few things before you can run the script.
+
 1. Add following Enviroment variables to the vhost file:
 
     SetEnv ENVIRONMENT docroot_your_name
@@ -44,3 +42,6 @@ Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
 
 ## Run script once a week in cron
 0 14 * * 1  yourusername  bash /path_to_this_app/sync.sh > /dev/null
+
+## Dependencies
+Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
