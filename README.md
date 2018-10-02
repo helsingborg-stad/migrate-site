@@ -19,21 +19,21 @@ Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
 ## Install - Things you need to do
 1. Add following Enviroment variables to the vhost file:
 
-  SetEnv ENVIRONMENT docroot_your_name
+    SetEnv ENVIRONMENT docroot_your_name
   
-  SetEnv SYNC true
+    SetEnv SYNC true
 
-  SetEnv SYNCID website Id (example: mysite)
+    SetEnv SYNCID website Id (example: mysite)
   
-  SetEnv SYNCDIR website-directory-name
+    SetEnv SYNCDIR website-directory-name
   
-  SetEnv DATABASE_NAME database-name
+    SetEnv DATABASE_NAME database-name
   
-  SetEnv DATABASE_HOST localhost
+    SetEnv DATABASE_HOST localhost
   
-  SetEnv DATABASE_USERNAME username
+    SetEnv DATABASE_USERNAME username
   
-  SetEnv DATABASE_PASSWORD password
+    SetEnv DATABASE_PASSWORD password
 
 2. Create a file name config.sh, use the config-example.sh as a template and set the path to your vhost directory and www directory
 3. Edit or add one or more site files in /sites directory. Use sync_sitename.sh as example and edit directory names and domains. Save site configs with same name as vhost Enviroment variable SYNCID.
