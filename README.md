@@ -1,5 +1,5 @@
 # migrate-site
-Shell script to migrate a site
+Shell script to migrate one ore more websites
 
 With this bash scripts you can sync one or more Beta wordpress installations with your Production environment.
 You need to set a few things before you can run the script.
@@ -14,7 +14,7 @@ The following things happen when you run the script.
 4. Creates a log file
 
 ## Dependencies
-Linux/Unix Bash, WP CLI, Wordpress site, MySQL
+Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
 
 ## Things you need to do
 1. Edit config.sh and set the path to your vhost directory and www directory
