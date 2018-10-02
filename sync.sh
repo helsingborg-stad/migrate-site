@@ -6,7 +6,7 @@
 
 source config.sh
 
-export SYNCDIR=$SITEDIR/sync_enviroments
+export SYNCDIR=$SITEDIR/$SYNCSCRIPT
 export SYNCREPLACE=$SYNCDIR/sync
 export SCRIPTDIR=$SYNCDIR/sites
 export BACKUPDIR=$SYNCDIR/backup

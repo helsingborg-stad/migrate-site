@@ -12,4 +12,8 @@ export VHOSTDIR=/path_to_vhost
 # Example: /var/www/
 export SITEDIR=/path_to_www
 
+# Direcory name of this app (migrate-site)
+# Change to what ever you want this folder to be called
+export SYNCSCRIPT=migrate-site
+
 
