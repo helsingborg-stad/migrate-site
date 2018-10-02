@@ -23,7 +23,7 @@ Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
   
     SetEnv SYNC true
 
-    SetEnv SYNCID website Id (example: sitename)
+    SetEnv SYNCID website Id (example: my-kool-site)
   
     SetEnv SYNCDIR website-directory-name
   
@@ -36,7 +36,7 @@ Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
     SetEnv DATABASE_PASSWORD password
 
 2. Create a file name config.sh, use the config-example.sh as a template and set the path to your vhost directory and www directory
-3. Edit or add one or more site files in /sites directory. Use sitename.sh as example and edit directory names and domains. Save site configs with same name as vhost Enviroment variable SYNCID.
+3. Edit or add one or more site files in /sites directory. Use sitename.sh as example and edit directory names and domains. Save site configs with same name/value as vhost Enviroment variable SYNCID (example: my-kool-site.sh).
 
 ## Run script manualy
 1. cd to migrate-site directory
