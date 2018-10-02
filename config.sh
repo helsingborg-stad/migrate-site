@@ -4,10 +4,12 @@
 # Set your server specific variables
 # ------------------------------------------------------------------------------
 
-# Path to vhost directory
+# Absolute path to vhost directory
+# Example: /etc/apache2/conf.d/
 export VHOSTDIR=/path_to_vhost
 
-# Path to www directory
+# Absolute path to www folder where you have all your website directories
+# Example: /var/www/
 export SITEDIR=/path_to_www
 
 
