@@ -41,7 +41,9 @@ You need to set a few things before you can run the script.
 2. Type: bash sync.sh to execute the script
 
 ## Run script once a week in cron
+```
 0 14 * * 1  yourusername  bash /path_to_this_app/sync.sh > /dev/null
+```
 
 ## Dependencies
 Linux/Unix Bash, WP CLI, Wordpress site/sites, MySQL
