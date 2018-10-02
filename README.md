@@ -16,7 +16,7 @@ The following things happen when you run the script.
 You need to set a few things before you can run the script.
 
 1. Add following Enviroment variables to the vhost file:
-
+```
     SetEnv ENVIRONMENT docroot_your_name
   
     SetEnv SYNC true
@@ -32,7 +32,7 @@ You need to set a few things before you can run the script.
     SetEnv DATABASE_USERNAME username
   
     SetEnv DATABASE_PASSWORD password
-
+```
 2. Create a file name config.sh, use the config-example.sh as a template and set the path to your vhost directory and www directory
 3. Edit or add one or more site files in /sites directory. Use sitename.sh as example and edit directory names and domains. Save site configs with same name/value as vhost Enviroment variable SYNCID (example: my-kool-site.sh).
 
